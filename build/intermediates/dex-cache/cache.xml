@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="G:\Android Studio\Projects\SoundVoltexScoreCalculator\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4f6f89a6850bb33ebff9a06ad089769dd10d3d2a">
+        <dex dex="G:\Android Studio\Projects\SoundVoltexScoreCalculator\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_2594575f4a877fd52ccb6e3382ebb9e84b341ea1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="G:\Android Studio\Projects\SoundVoltexScoreCalculator\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="G:\Android Studio\Projects\SoundVoltexScoreCalculator\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_fa2403b30f2162d7d47d84824e21c5b2d7b91efd\classes.dex" />
+    </item>
+
+</items>
