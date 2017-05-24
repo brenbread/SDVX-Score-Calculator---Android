@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Sound Voltex Score Calculator</string>
+    <string name="score">Score</string>
 </resources>
