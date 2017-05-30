@@ -42,69 +42,84 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         resetButton = (Button) findViewById(R.id.resetButton);
 
         calcButton.setOnClickListener(MainActivity.this);
+        resetButton.setOnClickListener(MainActivity.this);
 
     }
 
 
     @Override
     public void onClick(View v) {
-        String critIn = criticalInput.getText().toString(); //user input
-        String nearIn = nearInput.getText().toString();
-        String errorIn = errorInput.getText().toString();
-        String grade = "";
+        switch(v.getId()) {
+            case R.id.calcButton:
+                String critIn = criticalInput.getText().toString(); //user input
+                String nearIn = nearInput.getText().toString();
+                String errorIn = errorInput.getText().toString();
+                String grade = "";
 
-        if (critIn.equals("") || nearIn.equals("") || errorIn.equals("")) //checks if input is empty
-        {
-            scoreOut.setText("Input each field");
-        } else
-            { //there is input in all fields
-                int critFinal = Integer.parseInt(critIn); //parse string to int
-                int nearFinal = Integer.parseInt(nearIn);
-                int errorFinal = Integer.parseInt(errorIn);
+                if (critIn.equals("") || nearIn.equals("") || errorIn.equals("")) //checks if input is empty
+                {
+                    scoreOut.setText("Input each field");
+                } else
+                { //there is input in all fields
+                    int critFinal = Integer.parseInt(critIn); //parse string to int
+                    int nearFinal = Integer.parseInt(nearIn);
+                    int errorFinal = Integer.parseInt(errorIn);
 
-                int totalNotes = critFinal + nearFinal + errorFinal;
-                BigDecimal critValB = new BigDecimal(10000000);
-                BigDecimal critVal = critValB.divide(new BigDecimal(totalNotes),20,BigDecimal.ROUND_HALF_UP);
-                BigDecimal nearVal = critVal.divide(new BigDecimal(2),20,BigDecimal.ROUND_HALF_UP); //crit/2
-                BigDecimal totalScoreA = critVal.multiply(new BigDecimal(critFinal));
-                BigDecimal totalScoreB = nearVal.multiply(new BigDecimal(nearFinal));
-                BigDecimal totalScoreAdded = totalScoreA.add(totalScoreB);
+                    int totalNotes = critFinal + nearFinal + errorFinal;
+                    BigDecimal critValB = new BigDecimal(10000000);
+                    BigDecimal critVal = critValB.divide(new BigDecimal(totalNotes),20,BigDecimal.ROUND_HALF_UP);
+                    BigDecimal nearVal = critVal.divide(new BigDecimal(2),20,BigDecimal.ROUND_HALF_UP); //crit/2
+                    BigDecimal totalScoreA = critVal.multiply(new BigDecimal(critFinal));
+                    BigDecimal totalScoreB = nearVal.multiply(new BigDecimal(nearFinal));
+                    BigDecimal totalScoreAdded = totalScoreA.add(totalScoreB);
 
-            int totalScore = totalScoreAdded.intValue();
+                    int totalScore = totalScoreAdded.intValue();
 
-            //score calculation
-            if (critFinal != 0 && nearFinal == 0 && errorFinal == 0) {
-                totalScore = 10000000;
-                String scoreFinal = Integer.toString(totalScore);
-                scoreOut.setText(scoreFinal);
-            } else if (critFinal == 0 && nearFinal == 0 && errorFinal == 0) {
-                totalScore = 0;
-                String scoreFinal = Integer.toString(totalScore);
-                scoreOut.setText(scoreFinal);
-            } else {
-                String scoreFinal = Integer.toString(totalScore);
-                scoreOut.setText(scoreFinal);
-            }
+                    //score calculation
+                    if (critFinal != 0 && nearFinal == 0 && errorFinal == 0) {
+                        totalScore = 10000000;
+                        String scoreFinal = Integer.toString(totalScore);
+                        scoreOut.setText(scoreFinal);
+                    } else if (critFinal == 0 && nearFinal == 0 && errorFinal == 0) {
+                        totalScore = 0;
+                        String scoreFinal = Integer.toString(totalScore);
+                        scoreOut.setText(scoreFinal);
+                    } else {
+                        String scoreFinal = Integer.toString(totalScore);
+                        scoreOut.setText(scoreFinal);
+                    }
 
-            grade = gradeCalc(totalScore); //gets grade calc
+                    grade = gradeCalc(totalScore); //gets grade calc
 
-            //convert double to then int to string
-            int critINT = critVal.intValue();
-            int nearINT = nearVal.intValue();
+                    //convert double to then int to string
+                    int critINT = critVal.intValue();
+                    int nearINT = nearVal.intValue();
 
 
-            String critValFinal = Integer.toString(critINT);
-            String nearValFinal = Integer.toString(nearINT);
-            String totalNotesFinal = Integer.toString(totalNotes);
+                    String critValFinal = Integer.toString(critINT);
+                    String nearValFinal = Integer.toString(nearINT);
+                    String totalNotesFinal = Integer.toString(totalNotes);
 
-            //app output
-            critValOut.setText(critValFinal);
-            nearValOut.setText(nearValFinal);
-            noteValOut.setText(totalNotesFinal);
-            gradeOut.setText(grade);
+                    //app output
+                    critValOut.setText(critValFinal);
+                    nearValOut.setText(nearValFinal);
+                    noteValOut.setText(totalNotesFinal);
+                    gradeOut.setText(grade);
 
+                }
+                break;
+            
+            case R.id.resetButton:
+                criticalInput.setText("");
+                nearInput.setText("");
+                errorInput.setText("");
+                scoreOut.setText("");
+                gradeOut.setText("");
+                critValOut.setText("");
+                nearValOut.setText("");
+                noteValOut.setText("");
+                break;
         }
-
     }
 
     //grade calculation
