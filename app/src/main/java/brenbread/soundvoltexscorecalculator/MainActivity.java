@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.math.BigDecimal;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     public EditText criticalInput;
@@ -53,41 +55,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if (critIn.equals("") || nearIn.equals("") || errorIn.equals("")) //checks if input is empty
         {
-            scoreOut.setText("Input each field.");
-        } else { //there is input
+            scoreOut.setText("Input each field");
+        } else
+            { //there is input in all fields
+                int critFinal = Integer.parseInt(critIn); //parse string to int
+                int nearFinal = Integer.parseInt(nearIn);
+                int errorFinal = Integer.parseInt(errorIn);
 
+                int totalNotes = critFinal + nearFinal + errorFinal;
+                BigDecimal critValB = new BigDecimal(10000000);
+                BigDecimal critVal = critValB.divide(new BigDecimal(totalNotes),20,BigDecimal.ROUND_HALF_UP);
+                BigDecimal nearVal = critVal.divide(new BigDecimal(2),20,BigDecimal.ROUND_HALF_UP); //crit/2
+                BigDecimal totalScoreA = critVal.multiply(new BigDecimal(critFinal));
+                BigDecimal totalScoreB = nearVal.multiply(new BigDecimal(nearFinal));
+                BigDecimal totalScoreAdded = totalScoreA.add(totalScoreB);
 
-            int critFinal = Integer.parseInt(critIn); //parse string to int
-            int nearFinal = Integer.parseInt(nearIn);
-            int errorFinal = Integer.parseInt(errorIn);
-
-            int totalNotes = critFinal + nearFinal + errorFinal;
-            double critVal = 10000000 / totalNotes;
-            double nearVal = critVal / 2;
-            double totalScore = (critFinal * critVal) + (nearFinal * nearVal);
+            int totalScore = totalScoreAdded.intValue();
 
             //score calculation
             if (critFinal != 0 && nearFinal == 0 && errorFinal == 0) {
                 totalScore = 10000000;
-                int scoreINT = (int) totalScore;
-                String scoreFinal = Integer.toString(scoreINT);
+                String scoreFinal = Integer.toString(totalScore);
                 scoreOut.setText(scoreFinal);
             } else if (critFinal == 0 && nearFinal == 0 && errorFinal == 0) {
                 totalScore = 0;
-                int scoreINT = (int) totalScore;
-                String scoreFinal = Integer.toString(scoreINT);
+                String scoreFinal = Integer.toString(totalScore);
                 scoreOut.setText(scoreFinal);
             } else {
-                int scoreINT = (int) totalScore;
-                String scoreFinal = Integer.toString(scoreINT);
+                String scoreFinal = Integer.toString(totalScore);
                 scoreOut.setText(scoreFinal);
             }
 
-            grade = gradeCalc(totalScore);
+            grade = gradeCalc(totalScore); //gets grade calc
 
-            //convert int to string again
-            int critINT = (int) critVal;
-            int nearINT = (int) nearVal;
+            //convert double to then int to string
+            int critINT = critVal.intValue();
+            int nearINT = nearVal.intValue();
 
 
             String critValFinal = Integer.toString(critINT);
@@ -95,7 +98,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String totalNotesFinal = Integer.toString(totalNotes);
 
             //app output
-
             critValOut.setText(critValFinal);
             nearValOut.setText(nearValFinal);
             noteValOut.setText(totalNotesFinal);
@@ -105,6 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    //grade calculation
     String gradeCalc(double score) {
         String grade = "";
         if (score >= 9900000) {
