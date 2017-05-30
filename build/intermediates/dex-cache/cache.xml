@@ -2,22 +2,58 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="G:\Android Studio\Projects\SoundVoltexScoreCalculator\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\Bren Bread\.android\build-cache\dd42fa910870d01e45e913a597716618f20f8d22\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="d459247a3888ed7785536164a9dd62f69e685ff3">
-        <dex dex="G:\Android Studio\Projects\SoundVoltexScoreCalculator\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_2594575f4a877fd52ccb6e3382ebb9e84b341ea1\classes.dex" />
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="G:\Android Studio\Projects\SoundVoltexScoreCalculator\app\build\intermediates\pre-dexed\debug\classes_347db6ddfe4c35176d2a6bf627bc04ab8d0142de.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="G:\Android Studio\Projects\SoundVoltexScoreCalculator\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\Bren Bread\.android\build-cache\ba90c1889252209928f7526b4e8e740688273e61\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
-        <dex dex="G:\Android Studio\Projects\SoundVoltexScoreCalculator\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_fa2403b30f2162d7d47d84824e21c5b2d7b91efd\classes.dex" />
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="G:\Android Studio\Projects\SoundVoltexScoreCalculator\app\build\intermediates\pre-dexed\debug\classes_c6cba50dbe9847fd0555ffee0f2b20071b9354e6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bren Bread\.android\build-cache\77370b693a54e927e9684f42a0f3990ebe442587\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="G:\Android Studio\Projects\SoundVoltexScoreCalculator\app\build\intermediates\pre-dexed\debug\classes_f1587011855bcd161f194973175d8cae777ee3f9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bren Bread\.android\build-cache\ba90c1889252209928f7526b4e8e740688273e61\output\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="G:\Android Studio\Projects\SoundVoltexScoreCalculator\app\build\intermediates\pre-dexed\debug\internal_impl-23.4.0_cf0a9f278dd8c978064215f6c7a4d5d834adebbf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Bren Bread\.android\build-cache\9049878bcc3eae483af292dafc13a9ab762001e4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="G:\Android Studio\Projects\SoundVoltexScoreCalculator\app\build\intermediates\pre-dexed\debug\classes_74771eb16dbab54f04df0846e99bff8afa85f24d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="G:\Android Studio\Projects\SoundVoltexScoreCalculator\app\build\intermediates\pre-dexed\debug\support-annotations-23.4.0_fc18a0fdc80391aaf9a93e629f1a6f03cf6a9cf4.jar" />
     </item>
 
 </items>

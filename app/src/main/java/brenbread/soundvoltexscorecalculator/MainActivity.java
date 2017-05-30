@@ -59,6 +59,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (critIn.equals("") || nearIn.equals("") || errorIn.equals("")) //checks if input is empty
                 {
                     scoreOut.setText("Input each field");
+                    gradeOut.setText("");
+                    critValOut.setText("");
+                    nearValOut.setText("");
+                    noteValOut.setText("");
                 } else
                 { //there is input in all fields
                     int critFinal = Integer.parseInt(critIn); //parse string to int
@@ -108,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 }
                 break;
-            
+
             case R.id.resetButton:
                 criticalInput.setText("");
                 nearInput.setText("");
